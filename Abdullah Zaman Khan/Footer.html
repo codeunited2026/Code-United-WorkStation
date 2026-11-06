@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interio Hub: footer</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --blush: #f4d9d6;
+      --plum: #3a1c2a;
+      --rose: #ff8fa3
+    }
+
+    body {
+      margin: 0;
+      font: 400 16px/1.6 'DM Sans', system-ui, sans-serif;
+      color: var(--plum);
+      background: #fff
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    .logo {
+      font: 400 38px Fraunces, serif;
+      letter-spacing: .04em
+    }
+
+    /* ===== Footer ===== */
+    .edge {
+      border: 0;
+      height: 3px;
+      margin: 0;
+      background: var(--plum)
+    }
+
+    .site-footer {
+      background: var(--plum);
+      color: var(--blush);
+      padding: 56px 24px 28px
+    }
+
+    .site-footer .wrap {
+      max-width: 1100px;
+      margin: auto
+    }
+
+    /* wavy underline on hover */
+    .wave-link {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 7px
+    }
+
+    .wave-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 8px;
+      width: 0;
+      transition: width .45s;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8'%3E%3Cpath d='M0 4Q6 0 12 4T24 4' fill='none' stroke='%23f4d9d6' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x
+    }
+
+    .wave-link:hover::after,
+    .wave-link:focus-visible::after {
+      width: 100%
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 40px;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 44px;
+      border-bottom: 1px solid #f4d9d633
+    }
+
+    .cta h2 {
+      margin: 0;
+      max-width: 620px;
+      font: 400 clamp(28px, 4.5vw, 44px)/1.15 Fraunces, serif
+    }
+
+    .cta h2 em {
+      color: var(--rose)
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--blush);
+      color: var(--plum);
+      padding: 14px 26px;
+      border-radius: 99px;
+      font-weight: 500;
+      transition: .3s
+    }
+
+    .btn:hover {
+      background: var(--rose);
+      transform: translateY(-2px)
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 36px;
+      padding: 44px 0
+    }
+
+    .cols h3 {
+      margin: 0 0 14px;
+      font: 400 20px Fraunces, serif;
+      color: var(--rose)
+    }
+
+    .cols p {
+      margin: 0;
+      max-width: 300px;
+      opacity: .85
+    }
+
+    .cols li {
+      margin-bottom: 8px
+    }
+
+    .news form {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px
+    }
+
+    .news input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px 16px;
+      border-radius: 99px;
+      border: 1px solid #f4d9d655;
+      background: transparent;
+      color: var(--blush);
+      font: inherit
+    }
+
+    .news input::placeholder {
+      color: #f4d9d699
+    }
+
+    .news input:focus {
+      outline: 2px solid var(--rose);
+      outline-offset: 2px
+    }
+
+    .news button {
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 99px;
+      background: var(--rose);
+      color: var(--plum);
+      font: 500 15px 'DM Sans', sans-serif;
+      cursor: pointer
+    }
+
+    .bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      justify-content: space-between;
+      padding-top: 22px;
+      border-top: 1px solid #f4d9d633;
+      font-size: 14px;
+      opacity: .8
+    }
+
+    .bottom ul {
+      display: flex;
+      gap: 20px
+    }
+  </style>
+</head>
+
+<body>
+
+  <hr class="edge">
+  <footer class="site-footer">
+    <div class="wrap">
+
+      <div class="cta">
+        <h2>Let’s design a room you’ll love <em>coming home to.</em></h2>
+        <a class="btn" href="#">Book a visit</a>
+      </div>
+
+      <div class="cols">
+        <div>
+          <a class="logo" href="#" style="font-size:30px">Interio Hub</a>
+          <p style="margin-top:12px">Interior design for homes, offices and shops. We plan, style and build spaces that
+            feel like you.</p>
+        </div>
+        <nav aria-label="Explore">
+          <h3>Explore</h3>
+          <ul>
+            <li><a class="wave-link" href="#">Projects</a></li>
+            <li><a class="wave-link" href="#">Services</a></li>
+            <li><a class="wave-link" href="#">Products</a></li>
+            <li><a class="wave-link" href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>Visit or call</h3>
+          <ul>
+            <li>Your studio address here</li>
+            <li><a class="wave-link" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></li>
+            <li><a class="wave-link" href="tel:+920000000000">+92 000 0000000</a></li>
+            <li>Mon to Sat, 10am to 7pm</li>
+          </ul>
+        </div>
+        <div class="news">
+          <h3>Ideas in your inbox</h3>
+          <p>One short email a month with fresh room ideas.</p>
+          <form onsubmit="event.preventDefault()">
+            <input type="email" placeholder="Your email" aria-label="Email address" required>
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <span>© 2026 Interio Hub. All rights reserved.</span>
+        <ul>
+          <li><a class="wave-link" href="#">Instagram</a></li>
+          <li><a class="wave-link" href="#">Pinterest</a></li>
+          <li><a class="wave-link" href="#">Facebook</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

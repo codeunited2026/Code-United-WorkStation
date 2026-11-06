@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #F5F0FF;
+    color: #39245F;
+}
+
+/* Header */
+header {
+    background: #39245F;
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 27px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #CBB8E8;
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+    background: #CBB8E8;
+    padding: 45px 20px;
+}
+
+.heading h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+    color: #39245F;
+}
+
+.heading p {
+    color: #7652A5;
+}
+
+/* Contact Wrapper */
+.contact-wrapper {
+    display: flex;
+    gap: 30px;
+    padding: 50px 7%;
+}
+
+/* Left Panel */
+.left-panel {
+    width: 35%;
+    background: #39245F;
+    color: white;
+    padding: 35px;
+    border-radius: 15px;
+}
+
+.left-panel h2 {
+    margin-bottom: 15px;
+}
+
+.left-panel > p {
+    color: #CBB8E8;
+    line-height: 1.6;
+}
+
+.contact-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #7652A5;
+}
+
+.contact-item h3 {
+    color: #CBB8E8;
+    margin-bottom: 8px;
+}
+
+.contact-item p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Right Panel */
+.right-panel {
+    width: 65%;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #E0D5F0;
+}
+
+.right-panel h2 {
+    color: #39245F;
+    margin-bottom: 10px;
+}
+
+.right-panel > p {
+    color: #7652A5;
+    margin-bottom: 20px;
+}
+
+/* Form Fields */
+label {
+    display: block;
+    margin: 13px 0 7px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #CBB8E8;
+    border-radius: 7px;
+    background: #F5F0FF;
+    font-size: 14px;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid #7652A5;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: #39245F;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #7652A5;
+}
+
+/* Footer */
+footer {
+    background: #39245F;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav a {
+        margin: 7px;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+    }
+}

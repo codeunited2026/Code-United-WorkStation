@@ -1,0 +1,497 @@
+/* Interio Hub - Services page (standalone). Images live in the images/ folder. */
+:root {
+    --bar: #333;
+    --gold: #f0d9a0;
+    --frame: #4a3f35;
+    --bg: #fafafa;
+    --ink: #2a2622;
+    --mut: #6d655d;
+    --acc: #b9803f;
+    --line: #ddd6cc
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font: 16px/1.7 Montserrat, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink)
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 600;
+    line-height: 1.2
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 5%;
+    background: #1e1b18;
+    color: #fff
+}
+
+.top b {
+    font: 700 22px "Playfair Display", Georgia, serif
+}
+
+.top nav a {
+    margin-left: 22px;
+    font-size: 14px;
+    opacity: .8
+}
+
+.top nav a:hover {
+    opacity: 1
+}
+
+.frame {
+    background: var(--frame);
+    padding: 10px;
+    border-radius: 28px 0 28px 0;
+    overflow: hidden
+}
+
+.sx-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: #cfd6d2
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: translateY(14px)
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    * {
+        animation: none !important;
+        transition: none !important
+    }
+}
+
+@media(max-width:560px) {
+    .top nav {
+        display: none
+    }
+}
+
+/* ---- Services page ---- */
+.sv-hero {
+    background: #1b1b1b;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 80px 8%;
+    position: relative;
+    overflow: hidden
+}
+
+.sv-kick {
+    color: var(--gold);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-size: 13px
+}
+
+.sv-hero h1 {
+    font-size: clamp(32px, 4.4vw, 54px);
+    margin: 14px 0 16px
+}
+
+.sv-hero h1 em {
+    color: var(--gold);
+    font-style: italic
+}
+
+.sv-hero p {
+    color: #c8c3bb;
+    max-width: 52ch;
+    margin-bottom: 26px
+}
+
+.sv-big {
+    text-align: center;
+    line-height: 1
+}
+
+.sv-big b {
+    display: block;
+    font: 600 clamp(110px, 16vw, 220px) "Playfair Display", Georgia, serif;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--gold)
+}
+
+.sv-big span {
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-size: 14px
+}
+
+.sv-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #222;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .04em;
+    transition: background .2s
+}
+
+.sv-btn:hover {
+    background: #fff
+}
+
+.sv-cats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 50px;
+    background: var(--bar);
+    color: #d9d3c8;
+    padding: 16px 5%;
+    font-size: 14px;
+    letter-spacing: .06em
+}
+
+.sv-cats b {
+    color: var(--gold);
+    font: 600 22px "Playfair Display", Georgia, serif;
+    margin-right: 4px
+}
+
+.sx {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 70px 5%
+}
+
+.sx>h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center
+}
+
+.sx-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: minmax(300px, 440px) 1fr;
+    grid-template-rows: repeat(11, auto) 1fr;
+    column-gap: 56px;
+    align-items: start
+}
+
+.sx-list li {
+    display: contents
+}
+
+.sx-list input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none
+}
+
+.sx-list label {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 42px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 14px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    transition: background .2s, padding .2s
+}
+
+.sx-list label b {
+    font: 600 18px "Playfair Display", Georgia, serif;
+    color: var(--acc)
+}
+
+.sx-list label span {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.35
+}
+
+.sx-list label em {
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mut)
+}
+
+.sx-list label:hover {
+    background: #efe9df
+}
+
+.sx-list input:checked+label {
+    background: #1e1b18;
+    color: #fff;
+    padding-left: 22px;
+    border-radius: 0 18px 0 18px
+}
+
+.sx-list input:checked+label b,
+.sx-list input:checked+label em {
+    color: var(--gold)
+}
+
+.sx-list input:focus-visible+label {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px
+}
+
+.sx-panel {
+    display: none;
+    grid-column: 2;
+    grid-row: 1/-1;
+    position: sticky;
+    top: 20px
+}
+
+.sx-list input:checked~.sx-panel {
+    display: block;
+    animation: pop .3s ease
+}
+
+.sx-panel .frame {
+    margin-bottom: 20px
+}
+
+.sx-panel .img {
+    aspect-ratio: 16/9
+}
+
+.sv-tag {
+    display: inline-block;
+    background: var(--bar);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 3px 14px;
+    border-radius: 20px
+}
+
+.sx-panel h3 {
+    font-size: 30px;
+    margin: 10px 0 8px
+}
+
+.sx-d {
+    color: var(--mut);
+    margin-bottom: 18px
+}
+
+.sx-panel h4 {
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-bottom: 8px
+}
+
+.ck {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+    margin-bottom: 20px
+}
+
+.ck li::before {
+    content: "\2713";
+    color: var(--acc);
+    font-weight: 700;
+    margin-right: 8px
+}
+
+.sx-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 22px
+}
+
+.sx-meta div {
+    padding: 14px 18px
+}
+
+.sx-meta div+div {
+    border-left: 1px solid var(--line)
+}
+
+.sx-meta small {
+    display: block;
+    color: var(--mut);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase
+}
+
+.sx-meta b {
+    font-size: 15px
+}
+
+.sx-act {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap
+}
+
+.sx-act .sv-btn {
+    background: var(--bar);
+    color: var(--gold)
+}
+
+.sx-act .sv-btn:hover {
+    background: #111
+}
+
+.sv-link {
+    font-weight: 600;
+    color: var(--acc)
+}
+
+.sv-link:hover {
+    text-decoration: underline
+}
+
+.sv-proc {
+    background: #1b1b1b;
+    color: #fff;
+    padding: 70px 8%;
+    text-align: center
+}
+
+.sv-proc h2 {
+    font-size: 32px;
+    margin-bottom: 36px
+}
+
+.sv-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: left
+}
+
+.sv-steps div {
+    border-top: 2px solid var(--gold);
+    padding-top: 16px
+}
+
+.sv-steps b {
+    font: 600 38px "Playfair Display", Georgia, serif;
+    color: var(--gold)
+}
+
+.sv-steps h3 {
+    font-size: 20px;
+    margin: 4px 0
+}
+
+.sv-steps p {
+    color: #bdb7ad;
+    font-size: 14px
+}
+
+.sv-quote {
+    text-align: center;
+    padding: 70px 8%;
+    background: #efe9df
+}
+
+.sv-quote h2 {
+    font-size: 32px
+}
+
+.sv-quote p {
+    color: var(--mut);
+    margin: 8px 0 22px
+}
+
+.sv-foot {
+    background: #111;
+    color: #8b857c;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px
+}
+
+@media(max-width:900px) {
+    .sv-hero {
+        grid-template-columns: 1fr;
+        padding: 56px 6%
+    }
+
+    .sv-big {
+        display: none
+    }
+
+    .sx-list {
+        display: block
+    }
+
+    .sx-list li {
+        display: block
+    }
+
+    .sx-panel {
+        position: static;
+        margin: 14px 0 22px
+    }
+
+    .sv-steps {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+@media(max-width:560px) {
+
+    .ck,
+    .sx-meta,
+    .sv-steps {
+        grid-template-columns: 1fr
+    }
+
+    .sx-meta div+div {
+        border-left: 0;
+        border-top: 1px solid var(--line)
+    }
+
+    .sx-list label em {
+        display: none
+    }
+
+    .sx-list label {
+        grid-template-columns: 42px 1fr
+    }
+}

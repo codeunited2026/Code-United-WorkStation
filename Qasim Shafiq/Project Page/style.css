@@ -54,15 +54,56 @@ body {
 
 /* --- Hero Section --- */
 .hero-section {
-    height: 40vh;
-    display: flex;
+    min-height: 320px;
+    display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #1a1a1a;
+    /* background-color: #1a1a1a; */
     color: #fff;
     padding: 20px;
+    position: relative;
+    overflow: hidden;
+
 }
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    
+}
+
+.hero-shade {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+}
+
+/* darkens the video */
+.hero-text {
+    position: relative;
+    z-index: 1;
+    padding: 40px 5%;
+}
+
+/* sits above the video */
+.hero-video h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 5vw, 56px);
+    letter-spacing: .06em;
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .hero-video {
+        /* display: none; */
+    }
+}
+
+/* poster/dark background only */
 
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
@@ -514,7 +555,7 @@ h3 {
     font-weight: 600;
     line-height: 1.2;
     text-align: center;
-    
+
 }
 
 a {

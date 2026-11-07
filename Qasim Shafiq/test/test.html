@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* --- Base Page Setup --- */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            overflow-x: hidden;
+            /* Prevents horizontal scrollbars when panels are hidden */
+        }
+
+        /* Simple Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        /* --- Side Panel Wrapper Setup --- */
+        .side-panel-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 999;
+            pointer-events: none;
+            /* Allows clicking through to the gallery when hidden */
+        }
+
+        /* The Invisible Background Overlay (Left side close area) */
+        .panel-close-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            /* Invisible by default */
+            transition: background 0.3s ease;
+        }
+
+        /* --- The Half-Page Panel Layout --- */
+        .side-panel-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            /* Takes up exactly half of the screen width */
+            height: 100%;
+            background: #ffffff;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            /* Lets user scroll down if description text is long */
+
+            /* Hide the panel completely to the right side */
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .side-panel-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        /* --- THE ACTIVE TARGET STATE (When Clicked) --- */
+        .side-panel-wrapper:target {
+            pointer-events: auto;
+            /* Makes background overlay and content clickable */
+        }
+
+        /* When targeted, fade the dark backdrop over the left half of the page */
+        .side-panel-wrapper:target .panel-close-overlay {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* When targeted, slide the right panel into view */
+        .side-panel-wrapper:target .side-panel-content {
+            transform: translateX(0);
+        }
+
+        /* Close button layout (X) */
+        .close-x {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 35px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- THE MAIN GALLERY CONTAINER -->
+    <div class="gallery-grid">
+
+        <!-- Project Item 1 -->
+        <div class="gallery-item">
+            <a href="#panel1">
+                <img src="../Project Page/furniture images/cafe and restraurant/WhatsApp Image 2026-11-06 at 11.05.42 PM (1).jpeg" alt="Modern Living Room">
+                <div class="overlay">
+                    <h3>Luxury Villa</h3>
+                    <span>Living Room</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Project Item 2 -->
+        <div class="gallery-item">
+            <a href="#panel2">
+                <img src="kitchen.jpg" alt="Minimalist Kitchen">
+                <div class="overlay">
+                    <h3>Urban Loft</h3>
+                    <span>Kitchen Design</span>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- THE SIDE PANELS (Add at the very bottom of your HTML) -->
+
+    <!-- Panel 1 -->
+    <div id="panel1" class="side-panel-wrapper">
+        <!-- Clickable background area to close the panel -->
+        <a href="#" class="panel-close-overlay"></a>
+
+        <!-- The actual half-page panel -->
+        <div class="side-panel-content">
+            <a href="#" class="close-x">&times;</a>
+            <img src="living-room.jpg" alt="Modern Living Room Detail">
+            <h2>Luxury Villa</h2>
+            <h3>Living Room & Furnishing</h3>
+            <p>This project features premium hardwood flooring, customized recessed warm lighting, and minimalist
+                furniture selections to emphasize open space and natural light.</p>
+        </div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div id="panel2" class="side-panel-wrapper">
+        <a href="#" class="panel-close-overlay"></a>
+        <div class="side-panel-content">
+            <a href="#" class="close-x">&times;</a>
+            <img src="kitchen.jpg" alt="Minimalist Kitchen Detail">
+            <h2>Urban Loft</h2>
+            <h3>Kitchen Design</h3>
+            <p>A sleek, modern kitchen implementation featuring matte black cabinetry, industrial marble countertops,
+                and integrated smart appliances.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

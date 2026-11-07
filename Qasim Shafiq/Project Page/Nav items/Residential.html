@@ -321,7 +321,7 @@ body {
 
             <!-- Project 1 -->
             <div class="gallery-item residential" data-category="residential">
-                <a href="#panel1">
+                <a href="#p1">
                 <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop"
                     alt="Modern Living Room"> 
                 <div class="overlay">
@@ -335,7 +335,7 @@ body {
 
             <!-- Project 2 -->
             <div class="gallery-item kitchen" data-category="kitchen">
-                <a href="#panel2">
+                <a href="#p2">
                 <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=80&w=800&auto=format&fit=crop"
                     alt="Modern Kitchen">
                 <div class="overlay">
@@ -347,7 +347,7 @@ body {
 
             <!-- Project 3 -->
             <div class="gallery-item commercial" data-category="commercial">
-                <a href="#panel3">
+                <a href="#p3">
 
                     <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
                     alt="Office Space">
@@ -360,7 +360,7 @@ body {
 
             <!-- Project 4 (Tall Image) -->
             <div class="gallery-item bedroom" data-category="bedroom">
-                <a href="#panel4">
+                <a href="#p4">
 
                     <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=800&auto=format&fit=crop"
                     alt="Master Bedroom">
@@ -373,7 +373,7 @@ body {
 
             <!-- Project 5 -->
             <div class="gallery-item residential" data-category="residential">
-                <a href="#panel5"> 
+                <a href="#p5"> 
 
                 <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop"
                 alt="Dining Area">
@@ -386,7 +386,7 @@ body {
 
             <!-- Project 6 -->
             <div class="gallery-item commercial" data-category="commercial">
-                <a href="#panel6">
+                <a href="#p6">
 
                 <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop"
                 alt="Cafe Interior">
@@ -403,77 +403,404 @@ body {
 
       <!-- Side Panels -->
 
-    <div id="panel1" class="side-panel-wrapper">
-        <!-- Clickable background area to close the panel -->
-        <a href="#" class="panel-close-overlay"></a>
-
-        <!-- The actual half-page panel -->
-        <div class="side-panel-content">
-            <a href="#" class="close-x">&times;</a>
-            <img src="living-room.jpg" alt="Modern Living Room Detail">
-            <h2>Luxury Villa</h2>
-            <h3>Living Room & Furnishing</h3>
-            <p>This project features premium hardwood flooring, customized recessed warm lighting, and minimalist
-                furniture selections to emphasize open space and natural light.</p>
+    <div class="modal" id="p1" role="dialog" aria-modal="true" aria-label="Luxury Villa">
+        <a class="shade" href="#gallery" aria-label="Close"></a>
+        <div class="mbox">
+            <a class="mx" href="#gallery" aria-label="Close">&times;</a>
+            <article class="dh">
+                <div class="frame">
+                   <div class="img p1" role="img" aria-label="Luxury Villa main view"></div>
+                </div>
+                <span class="badge">Home</span>
+                <h2 class="mt">Luxury Villa</h2>
+                <p class="sub">Living room &amp; furnishing &middot; Contemporary warm style</p>
+                <div class="meta">
+                    <div><small>Duration</small><b>14 weeks</b></div>
+                    <div><small>Area / size</small><b>3,200 sq ft</b></div>
+                    <div><small>Location</small><b>Sunrise Heights, Block 5</b></div>
+                    <div><small>Completed</small><b>2026</b></div>
+                    <div><small>Client</small><b>Mr. & Mrs. Rahman</b></div>
+                    <div><small>Budget</small><b>$48,000</b></div>
+                </div>
+                <div class="two">
+                    <section>
+                        <h2>Overview</h2>
+                        <p>A full living room and lounge redesign for a family villa. We opened the layout, brought in
+                            warm leather and natural wood, and added a gallery wall to give the room a personal focal
+                            point. Furniture was chosen to stay comfortable for daily family use while still feeling
+                            premium.</p>
+                        <h2 style="margin-top:26px">Highlights</h2>
+                        <ul class="hl">
+                            <li>Open-plan layout with improved natural light</li>
+                            <li>Custom TV unit and wall panelling</li>
+                            <li>Layered warm lighting scheme</li>
+                            <li>Neutral palette with leather and brass accents</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Products used</h2>
+                        <ul class="prods">
+                            <li><b>Tan leather sectional sofa</b><span>Full-grain leather, kiln-dried hardwood
+                                    frame</span></li>
+                            <li><b>Steel-frame accent armchairs (2)</b><span>Powder-coated black steel, boucle
+                                    seat</span></li>
+                            <li><b>Travertine coffee table</b><span>Honed natural stone, 110 cm round</span></li>
+                            <li><b>Wool area rug</b><span>Hand-tufted, 240 x 300 cm</span></li>
+                            <li><b>Brass floor lamp</b><span>Dimmable warm LED, 160 cm</span></li>
+                            <li><b>Gallery wall frames (12)</b><span>Black oak frames, matte glass</span></li>
+                        </ul>
+                    </section>
+                </div>
+                <section class="sec">
+                    <h2>Project images</h2>
+                    <div class="gal">
+                        <div class="frame">
+                            <div class="img p2" role="img" aria-label="Luxury Villa image 1"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p5" role="img" aria-label="Luxury Villa image 2"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p10" role="img" aria-label="Luxury Villa image 3"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p9" role="img" aria-label="Luxury Villa image 4"></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <nav class="mnav"><a href="#p6">&larr; Previous</a><a class="btn" href="#">Book a consultation</a><a
+                    href="#p2">Next &rarr;</a></nav>
         </div>
     </div>
-
-    <!-- Panel 2 -->
-    <div id="panel2" class="side-panel-wrapper">
-        <a href="#" class="panel-close-overlay"></a>
-        <div class="side-panel-content">
-            <a href="#" class="close-x">&times;</a>
-            <img src="kitchen.jpg" alt="Minimalist Kitchen Detail">
-            <h2>Urban Loft</h2>
-            <h3>Kitchen Design</h3>
-            <p>A sleek, modern kitchen implementation featuring matte black cabinetry, industrial marble countertops,
-                and integrated smart appliances.</p>
+    <div class="modal" id="p2" role="dialog" aria-modal="true" aria-label="Modern White Kitchen">
+        <a class="shade" href="#gallery" aria-label="Close"></a>
+        <div class="mbox"><a class="mx" href="#gallery" aria-label="Close">&times;</a>
+            <article class="dh">
+                <div class="frame">
+                    <div class="img p11" role="img" aria-label="Modern White Kitchen main view"></div>
+                </div>
+                <span class="badge">Kitchen</span>
+                <h2 class="mt">Modern White Kitchen</h2>
+                <p class="sub">Cabinets &amp; countertops &middot; Modern farmhouse style</p>
+                <div class="meta">
+                    <div><small>Duration</small><b>8 weeks</b></div>
+                    <div><small>Area / size</small><b>280 sq ft</b></div>
+                    <div><small>Location</small><b>Maple Residency, Floor 3</b></div>
+                    <div><small>Completed</small><b>2026</b></div>
+                    <div><small>Client</small><b>Ms. Ayesha Khan</b></div>
+                    <div><small>Budget</small><b>$22,500</b></div>
+                </div>
+                <div class="two">
+                    <section>
+                        <h2>Overview</h2>
+                        <p>A cramped, dark kitchen turned into a bright cooking and dining space. We replaced the layout
+                            with a work triangle, added a waterfall quartz island, and finished the walls with hexagon
+                            tiles for texture.</p>
+                        <h2 style="margin-top:26px">Highlights</h2>
+                        <ul class="hl">
+                            <li>Island seating for 4</li>
+                            <li>Full-height pantry cabinet</li>
+                            <li>Under-cabinet LED lighting</li>
+                            <li>Easy-clean surfaces throughout</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Products used</h2>
+                        <ul class="prods">
+                            <li><b>Shaker cabinets, matte white</b><span>Moisture-resistant MDF, soft-close
+                                    hinges</span></li>
+                            <li><b>Quartz waterfall island</b><span>Marble-look quartz, 30 mm thick</span></li>
+                            <li><b>Hexagon tile backsplash</b><span>Glazed ceramic, white with grey grout</span></li>
+                            <li><b>Copper cabinet handles</b><span>Brushed copper, 128 mm</span></li>
+                            <li><b>36 inch range with hood</b><span>Stainless steel, 6 burners</span></li>
+                            <li><b>Pendant lights (2)</b><span>Brass and opal glass</span></li>
+                        </ul>
+                    </section>
+                </div>
+                <section class="sec">
+                    <h2>Project images</h2>
+                    <div class="gal">
+                        <div class="frame">
+                            <div class="img p3" role="img" aria-label="Modern White Kitchen image 1"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p10" role="img" aria-label="Modern White Kitchen image 2"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p9" role="img" aria-label="Modern White Kitchen image 3"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p5" role="img" aria-label="Modern White Kitchen image 4"></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <nav class="mnav"><a href="#p1">&larr; Previous</a><a class="btn" href="#">Book a consultation</a><a
+                    href="#p3">Next &rarr;</a></nav>
         </div>
     </div>
-    <div id="panel3" class="side-panel-wrapper">
-        <a href="#" class="panel-close-overlay"></a>
-        <div class="side-panel-content">
-            <a href="#" class="close-x">&times;</a>
-            <img src="kitchen.jpg" alt="Minimalist Kitchen Detail">
-            <h2>Urban Loft</h2>
-            <h3>Kitchen Design</h3>
-            <p>A sleek, modern kitchen implementation featuring matte black cabinetry, industrial marble countertops,
-                and integrated smart appliances.</p>
+    <div class="modal" id="p3" role="dialog" aria-modal="true" aria-label="Skyline Bedroom">
+        <a class="shade" href="#gallery" aria-label="Close"></a>
+        <div class="mbox"><a class="mx" href="#gallery" aria-label="Close">&times;</a>
+            <article class="dh">
+                <div class="frame">
+                    <div class="img p4" role="img" aria-label="Skyline Bedroom main view"></div>
+                </div>
+                <span class="badge">Bedroom</span>
+                <h2 class="mt">Skyline Bedroom</h2>
+                <p class="sub">Master suite design &middot; Modern luxe style</p>
+                <div class="meta">
+                    <div><small>Duration</small><b>6 weeks</b></div>
+                    <div><small>Area / size</small><b>420 sq ft</b></div>
+                    <div><small>Location</small><b>Harbour Tower, Floor 18</b></div>
+                    <div><small>Completed</small><b>2025</b></div>
+                    <div><small>Client</small><b>Mr. Daniyal Siddiqui</b></div>
+                    <div><small>Budget</small><b>$18,200</b></div>
+                </div>
+                <div class="two">
+                    <section>
+                        <h2>Overview</h2>
+                        <p>A high-rise master bedroom designed around the city view. Dark charcoal walls, soft textiles
+                            and a statement chandelier create a calm, hotel-style retreat.</p>
+                        <h2 style="margin-top:26px">Highlights</h2>
+                        <ul class="hl">
+                            <li>Walk-in wardrobe with sliding doors</li>
+                            <li>Dimmable bedside lighting</li>
+                            <li>Acoustic wall panel behind the bed</li>
+                            <li>Soft neutral rug and textiles</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Products used</h2>
+                        <ul class="prods">
+                            <li><b>Channel-tufted upholstered bed</b><span>King size, velvet, solid wood base</span>
+                            </li>
+                            <li><b>Faux-fur ottomans (2)</b><span>Gold-finish steel legs</span></li>
+                            <li><b>Brass chandelier</b><span>Multi-arm, warm LED bulbs</span></li>
+                            <li><b>Blackout curtains</b><span>Floor-to-ceiling, double layer</span></li>
+                            <li><b>Bedside tables (2)</b><span>White finish with gold legs</span></li>
+                            <li><b>Abstract canvas art (2)</b><span>Textured, 90 x 120 cm</span></li>
+                        </ul>
+                    </section>
+                </div>
+                <section class="sec">
+                    <h2>Project images</h2>
+                    <div class="gal">
+                        <div class="frame">
+                            <div class="img p5" role="img" aria-label="Skyline Bedroom image 1"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p6" role="img" aria-label="Skyline Bedroom image 2"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p2" role="img" aria-label="Skyline Bedroom image 3"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p10" role="img" aria-label="Skyline Bedroom image 4"></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <nav class="mnav"><a href="#p2">&larr; Previous</a><a class="btn" href="#">Book a consultation</a><a
+                    href="#p4">Next &rarr;</a></nav>
         </div>
     </div>
-    <div id="panel4" class="side-panel-wrapper">
-        <a href="#" class="panel-close-overlay"></a>
-        <div class="side-panel-content">
-            <a href="#" class="close-x">&times;</a>
-            <img src="kitchen.jpg" alt="Minimalist Kitchen Detail">
-            <h2>Urban Loft</h2>
-            <h3>Kitchen Design</h3>
-            <p>A sleek, modern kitchen implementation featuring matte black cabinetry, industrial marble countertops,
-                and integrated smart appliances.</p>
+    <div class="modal" id="p4" role="dialog" aria-modal="true" aria-label="Open-Plan Office">
+        <a class="shade" href="#gallery" aria-label="Close"></a>
+        <div class="mbox"><a class="mx" href="#gallery" aria-label="Close">&times;</a>
+            <article class="dh">
+                <div class="frame">
+                    <div class="img p13" role="img" aria-label="Open-Plan Office main view"></div>
+                </div>
+                <span class="badge">Office</span>
+                <h2 class="mt">Open-Plan Office</h2>
+                <p class="sub">Workspace &amp; lounge &middot; Industrial minimal style</p>
+                <div class="meta">
+                    <div><small>Duration</small><b>12 weeks</b></div>
+                    <div><small>Area / size</small><b>4,800 sq ft</b></div>
+                    <div><small>Location</small><b>Business Square, Level 6</b></div>
+                    <div><small>Completed</small><b>2025</b></div>
+                    <div><small>Client</small><b>Nova Tech Solutions</b></div>
+                    <div><small>Budget</small><b>$96,000</b></div>
+                </div>
+                <div class="two">
+                    <section>
+                        <h2>Overview</h2>
+                        <p>A modern workspace for a 40-person team with open desks, glass meeting rooms and a relaxed
+                            lounge. Acoustic ceiling panels keep the open plan quiet and productive.</p>
+                        <h2 style="margin-top:26px">Highlights</h2>
+                        <ul class="hl">
+                            <li>Two meeting rooms and four phone booths</li>
+                            <li>Pantry and breakout zone</li>
+                            <li>Cable-managed desks</li>
+                            <li>Biophilic planting near windows</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Products used</h2>
+                        <ul class="prods">
+                            <li><b>Height-adjustable desks (40)</b><span>Electric sit/stand, cable tray</span></li>
+                            <li><b>Ergonomic mesh chairs (40)</b><span>Adjustable lumbar and arms</span></li>
+                            <li><b>Glass partitions</b><span>10 mm tempered, aluminium frame</span></li>
+                            <li><b>Acoustic ceiling panels</b><span>Felt, 600 x 600 mm</span></li>
+                            <li><b>Lounge seating set</b><span>Modular sofas, pouf, side tables</span></li>
+                            <li><b>Linear LED lighting</b><span>4000K, 36 W profiles</span></li>
+                        </ul>
+                    </section>
+                </div>
+                <section class="sec">
+                    <h2>Project images</h2>
+                    <div class="gal">
+                        <div class="frame">
+                            <div class="img p8" role="img" aria-label="Open-Plan Office image 1"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p7" role="img" aria-label="Open-Plan Office image 2"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p9" role="img" aria-label="Open-Plan Office image 3"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p5" role="img" aria-label="Open-Plan Office image 4"></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <nav class="mnav"><a href="#p3">&larr; Previous</a><a class="btn" href="#">Book a consultation</a><a
+                    href="#p5">Next &rarr;</a></nav>
         </div>
     </div>
-    <div id="panel5" class="side-panel-wrapper">
-        <a href="#" class="panel-close-overlay"></a>
-        <div class="side-panel-content">
-            <a href="#" class="close-x">&times;</a>
-            <img src="kitchen.jpg" alt="Minimalist Kitchen Detail">
-            <h2>Urban Loft</h2>
-            <h3>Kitchen Design</h3>
-            <p>A sleek, modern kitchen implementation featuring matte black cabinetry, industrial marble countertops,
-                and integrated smart appliances.</p>
+    <div class="modal" id="p5" role="dialog" aria-modal="true" aria-label="Garden Terrace">
+        <a class="shade" href="#gallery" aria-label="Close"></a>
+        <div class="mbox"><a class="mx" href="#gallery" aria-label="Close">&times;</a>
+            <article class="dh">
+                <div class="frame">
+                    <div class="img p12" role="img" aria-label="Garden Terrace main view"></div>
+                </div>
+                <span class="badge">Outdoor</span>
+                <h2 class="mt">Garden Terrace</h2>
+                <p class="sub">Outdoor living space &middot; Tropical modern style</p>
+                <div class="meta">
+                    <div><small>Duration</small><b>5 weeks</b></div>
+                    <div><small>Area / size</small><b>900 sq ft</b></div>
+                    <div><small>Location</small><b>Greenfield Villas, Unit 12</b></div>
+                    <div><small>Completed</small><b>2026</b></div>
+                    <div><small>Client</small><b>The Malik Family</b></div>
+                    <div><small>Budget</small><b>$14,800</b></div>
+                </div>
+                <div class="two">
+                    <section>
+                        <h2>Overview</h2>
+                        <p>A bare terrace converted into an all-day outdoor living room. A timber pergola gives shade,
+                            while planters, soft lighting and weatherproof furniture make it usable from morning to
+                            night.</p>
+                        <h2 style="margin-top:26px">Highlights</h2>
+                        <ul class="hl">
+                            <li>Shaded seating and dining zones</li>
+                            <li>Built-in drainage under the deck</li>
+                            <li>Plant wall for privacy</li>
+                            <li>Evening lighting scheme</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Products used</h2>
+                        <ul class="prods">
+                            <li><b>Teak lounge set</b><span>Sofa, 2 chairs, coffee table</span></li>
+                            <li><b>Cedar pergola</b><span>4 x 5 m, UV-treated</span></li>
+                            <li><b>Composite decking</b><span>Anti-slip, 900 sq ft</span></li>
+                            <li><b>Outdoor rug</b><span>Weatherproof polypropylene</span></li>
+                            <li><b>Large planters (6)</b><span>Powder-coated steel and terracotta</span></li>
+                            <li><b>String lights</b><span>Warm white, IP65</span></li>
+                        </ul>
+                    </section>
+                </div>
+                <section class="sec">
+                    <h2>Project images</h2>
+                    <div class="gal">
+                        <div class="frame">
+                            <div class="img p2" role="img" aria-label="Garden Terrace image 1"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p5" role="img" aria-label="Garden Terrace image 2"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p9" role="img" aria-label="Garden Terrace image 3"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p10" role="img" aria-label="Garden Terrace image 4"></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <nav class="mnav"><a href="#p4">&larr; Previous</a><a class="btn" href="#">Book a consultation</a><a
+                    href="#p6">Next &rarr;</a></nav>
         </div>
     </div>
-    <div id="panel6" class="side-panel-wrapper">
-        <a href="#" class="panel-close-overlay"></a>
-        <div class="side-panel-content">
-            <a href="#" class="close-x">&times;</a>
-            <img src="kitchen.jpg" alt="Minimalist Kitchen Detail">
-            <h2>Urban Loft</h2>
-            <h3>Kitchen Design</h3>
-            <p>A sleek, modern kitchen implementation featuring matte black cabinetry, industrial marble countertops,
-                and integrated smart appliances.</p>
+    <div class="modal" id="p6" role="dialog" aria-modal="true" aria-label="Handcrafted Dining Set">
+        <a class="shade" href="#gallery" aria-label="Close"></a>
+        <div class="mbox"><a class="mx" href="#gallery" aria-label="Close">&times;</a>
+            <article class="dh">
+                <div class="frame">
+                    <div class="img p3" role="img" aria-label="Handcrafted Dining Set main view"></div>
+                </div>
+                <span class="badge">Furniture</span>
+                <h2 class="mt">Handcrafted Dining Set</h2>
+                <p class="sub">Custom furniture &middot; Scandinavian style</p>
+                <div class="meta">
+                    <div><small>Duration</small><b>4 weeks</b></div>
+                    <div><small>Area / size</small><b>Table 240 x 100 cm</b></div>
+                    <div><small>Location</small><b>Interio Hub Workshop</b></div>
+                    <div><small>Completed</small><b>2026</b></div>
+                    <div><small>Client</small><b>Private order</b></div>
+                    <div><small>Budget</small><b>$3,900</b></div>
+                </div>
+                <div class="two">
+                    <section>
+                        <h2>Overview</h2>
+                        <p>A made-to-order 8-seater dining set built in our own workshop. The walnut tabletop was
+                            book-matched for a continuous grain, and the steel base keeps the look light.</p>
+                        <h2 style="margin-top:26px">Highlights</h2>
+                        <ul class="hl">
+                            <li>Designed and built in 4 weeks</li>
+                            <li>Free delivery and assembly</li>
+                            <li>5-year structural warranty</li>
+                            <li>Fabric and wood samples sent before production</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Products used</h2>
+                        <ul class="prods">
+                            <li><b>Solid walnut tabletop</b><span>40 mm thick, hand-oiled finish</span></li>
+                            <li><b>Black steel table legs</b><span>Powder-coated, adjustable feet</span></li>
+                            <li><b>Upholstered dining chairs (8)</b><span>Wool blend fabric, ash legs</span></li>
+                            <li><b>Natural oil finish</b><span>Food-safe, water resistant</span></li>
+                            <li><b>Felt floor pads</b><span>Protect hardwood floors</span></li>
+                            <li><b>Matching bench</b><span>180 cm, walnut and steel</span></li>
+                        </ul>
+                    </section>
+                </div>
+                <section class="sec">
+                    <h2>Project images</h2>
+                    <div class="gal">
+                        <div class="frame">
+                            <div class="img p6" role="img" aria-label="Handcrafted Dining Set image 1"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p7" role="img" aria-label="Handcrafted Dining Set image 2"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p8" role="img" aria-label="Handcrafted Dining Set image 3"></div>
+                        </div>
+                        <div class="frame">
+                            <div class="img p10" role="img" aria-label="Handcrafted Dining Set image 4"></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <nav class="mnav"><a href="#p5">&larr; Previous</a><a class="btn" href="#">Book a consultation</a><a
+                    href="#p1">Next &rarr;</a></nav>
         </div>
     </div>
-
 </body>
 </html>

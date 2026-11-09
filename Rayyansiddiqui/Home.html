@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interio Hub</title>
+    
                         <!-- ICONS LINKS  -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+<link rel="stylesheet" href="../Qasim Shafiq/Project Page/style.css">
 <style>
-    
+/* ===== COLOR THEME ===== */
+:root {
+    --brown: #4B3528;
+    --pink: #F4D9D6;
+    --cream: #F8F5F0;
+    --light-brown: #98765B;
+    --rose: #FF8FA3;
+    --white: #FFFFFF;
+    --text: #333333;
+}
+
 /* ===== RESET ===== */
 * {
     margin: 0;
@@ -17,394 +29,883 @@
     box-sizing: border-box;
 }
 
-.body {
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+}
 
-    font-family: Arial, Helvetica, sans-serif;
-    color: #111;
-    background: #fff;
+a {
+    text-decoration: none;
 }
 
 /* ===== NAVBAR ===== */
-nav {
-    background-color: #222;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 50px;
+    .site-header {
+      background: #f4d9d6;
+      color: #3a1c2a;
+      padding: 36px 24px
+    }
+
+    .site-header .inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px
+    }
+
+    .site-header .logo {
+      font: 400 38px Fraunces, serif;
+      letter-spacing: .04em;
+      color: inherit;
+      text-decoration: none
+    }
+
+    .site-header ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 30px
+    }
+
+    .site-header li a {
+      position: relative;
+      display: block;
+      padding-bottom: 9px;
+      color: inherit;
+      text-decoration: none
+    }
+
+    .site-header li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 8px;
+      width: 0;
+      transition: width .45s;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8'%3E%3Cpath d='M0 4Q6 0 12 4T24 4' fill='none' stroke='%233a1c2a' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x
+    }
+
+    .site-header li a:hover::after,
+    .site-header li a:focus-visible::after {
+      width: 100%
+    }
+
+    .site-header a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px
+    }
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f3f3;
+        }
+
+        /* ===== MAIN HEADING ===== */
+        .main-heading {
+            background: white;
+            height: 180px;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .main-heading h1 {
+            color: #333333 ;
+            font-size: 30px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .main-heading p {
+            color: #333333;
+            font-size: 16px;
+            margin-top: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            background: #f3f3f3;
+            padding: 90px 30px;
+        }
+
+        .services-container {
+            max-width: 1450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 45px;
+        }
+
+        /* ===== SERVICE CARD ===== */
+        .service-card {
+            position: relative;
+            width: 100%;
+            height: 270px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .service-card h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 30px;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+            text-shadow: 1px 2px 5px rgba(0,0,0,0.4);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+
+            .main-heading h1 {
+                font-size: 22px;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-card {
+                height: 230px;
+            }
+
+            .service-card h2 {
+                font-size: 24px;
+            }
+
+        }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.logo {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== TOP HEADER ===== */
+.header {
+    background-color:#333333 ;
+    height: 214px;
+    text-align: center;
+    padding: 45px 15px;
     color: white;
-    font-size: 26px;
-    font-weight: bold;
 }
 
-.logo span {
-    color: orange;
+.header h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
-.logo img {
-    width: 120px;
-    height: 50px;
-    object-fit: contain;
-    display: block;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
+.header p {
     font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.header a {
+    display: inline-block;
+    background: white;
+    color: #637e48;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 3px;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: orange;
-}
-
-.menu-btn {
-    display: none;
+.header a:hover {
+    background: #333;
     color: white;
+}
+
+/* ===== PROJECT SLIDER ===== */
+.projects {
+    position: relative;
+    width: 100%;
+    height: 620px;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* ===== PROJECT HEADING ===== */
+.project-heading {
+    position: absolute;
+    top: 32px;
+    left: 55px;
     font-size: 28px;
-    background: none;
+    color: black;
+}
+
+/* ===== PROJECT NAME ===== */
+.project-name {
+    position: absolute;
+    bottom: 0;
+    left: 55px;
+    border: 2px solid black;
+    padding: 8px 10px;
+    background: rgba(255,255,255,0.2);
+    color: black;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+/* ===== ARROWS ===== */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     border: none;
+    background: transparent;
+    color: black;
+    font-size: 42px;
     cursor: pointer;
+    z-index: 5;
+    padding: 10px;
 }
 
-/* ===== FOOTER ===== */
-.footer {
-    width: 100%;
-    background: #fff;
-    color: #111;
-    padding: 70px 20px 100px;
+.prev {
+    left: 45px;
 }
 
-.footer-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 35px;
-    align-items: start;
+.next {
+    right: 35px;
 }
 
-.footer h4 {
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 14px;
-    color: #111;
+.arrow:hover {
+    color: #637e48;
 }
-
-.footer p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 7px;
-    color: #111;
-}
-
-.footer ul {
-    list-style: none;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.footer li {
-    margin-bottom: 7px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
 }
 
-.footer a {
-    color: #111;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-/* ===== CONTACT ===== */
-.contact p {
-    margin-bottom: 8px;
-}
-
-.contact a {
-    text-decoration: underline;
-}
-
-/* ===== NEWSLETTER ===== */
-.newsletter > p {
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
-
-/* ===== SUBSCRIBE FORM ===== */
-.subscribe {
-    display: flex;
+.contact-section {
     width: 100%;
-    height: 28px;
-    border: 1px solid #aaa;
-    margin-top: 12px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 5%;
+    gap: 50px;
 }
 
-.subscribe input {
-    width: 70%;
-    min-width: 0;
-    height: 100%;
-    border: none;
-    outline: none;
-    padding: 0 8px;
-    font-size: 10px;
-    background: #fff;
+/* LEFT SIDE */
+
+.contact-info {
+    width: 35%;
+    color: #526b42;
 }
 
-.subscribe button {
-    width: 30%;
-    height: 100%;
-    border: none;
-    background: #000;
-    color: #fff;
-    font-size: 9px;
-    font-weight: bold;
-    cursor: pointer;
+.contact-info h1 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 15px;
 }
 
-.subscribe button:hover {
-    background: #333;
+.contact-info h3 {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
 }
 
-/* ===== SOCIAL ICONS ===== */
-.socials {
-    margin-top: 25px;
-}
-
-.socials h4 {
-    margin-bottom: 10px;
+.contact-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
 }
 
 .social-icons {
     display: flex;
-    align-items: center;
-    gap: 7px;
+    gap: 15px;
 }
 
 .social-icons a {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
+    background-color: #98765B;
+    color: white;
+    padding: 12px 15px;
     text-decoration: none;
+    border-radius: 4px;
 }
 
-.social-icons .facebook {
-    background: #315aab;
+/* RIGHT SIDE MAP */
+
+.map-container {
+    width: 65%;
+    height: 575px;
 }
 
-.social-icons .instagram {
-    background: #df4387;
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.social-icons .whatsapp {
-    background: #2fbd65;
-}
-.social-icons .linkedin {
-    background: #0A66C2;
-}
+/* RESPONSIVE */
 
-/* ===== TABLET ===== */
-@media screen and (max-width: 900px) {
-    .footer {
-        padding: 50px 25px;
-    }
+@media (max-width: 768px) {
 
-    .footer-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 35px 25px;
-    }
-}
-
-/* ===== MOBILE ===== */
-@media screen and (max-width: 600px) {
-    nav {
-        padding: 18px 20px;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
+    .contact-section {
         flex-direction: column;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: #222;
-        padding: 20px;
-        gap: 20px;
-        z-index: 1000;
+        padding: 40px 5%;
+        align-items: stretch;
     }
 
-    .nav-links.active {
-        display: flex;
+    .contact-info {
+        width: 100%;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 400px;
     }
 }
 
-@media screen and (max-width: 500px) {
-    .footer {
-        padding: 35px 20px;
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+    .header {
+        height: 190px;
+        padding: 35px 10px;
     }
 
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer p,
-    .footer a {
+    .header p {
         font-size: 13px;
     }
 
-    .subscribe {
-        max-width: 350px;
+    .projects {
+        height: 450px;
+    }
+
+    .project-heading {
+        left: 20px;
+        font-size: 23px;
+    }
+
+    .project-name {
+        left: 20px;
+        font-size: 21px;
+    }
+
+    .prev {
+        left: 5px;
+    }
+
+    .next {
+        right: 5px;
+    }
+}
+/* ===== FOOTER ===== */
+.edge {
+    border: 0;
+    height: 3px;
+    background: var(--pink);
+}
+
+.site-footer {
+    background: var(--brown);
+    color: var(--white);
+    padding: 55px 24px 25px;
+}
+
+.site-footer .wrap {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 40px;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ffffff33;
+}
+
+.cta h2 {
+    max-width: 620px;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.2;
+    color: var(--white);
+}
+
+.cta h2 em {
+    color: var(--pink);
+}
+
+.site-footer .btn {
+    background: var(--pink);
+    color: var(--brown);
+    border-radius: 30px;
+}
+
+.site-footer .btn:hover {
+    background: var(--rose);
+}
+
+.cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 36px;
+    padding: 45px 0;
+}
+
+.cols h3 {
+    color: var(--pink);
+    margin-bottom: 14px;
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+}
+
+.cols p {
+    max-width: 300px;
+    opacity: 0.9;
+}
+
+.cols ul {
+    list-style: none;
+}
+
+.cols li {
+    margin-bottom: 10px;
+}
+
+.cols a {
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.cols a:hover {
+    color: var(--pink);
+}
+
+/* ===== NEWSLETTER ===== */
+.news form {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.news input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 16px;
+    border-radius: 25px;
+    border: 1px solid var(--pink);
+    background: transparent;
+    color: var(--white);
+    outline: none;
+}
+
+.news input::placeholder {
+    color: #ffffffaa;
+}
+
+.news button {
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 25px;
+    background: var(--pink);
+    color: var(--brown);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.news button:hover {
+    background: var(--rose);
+}
+
+/* ===== BOTTOM FOOTER ===== */
+.bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    justify-content: space-between;
+    padding-top: 22px;
+    border-top: 1px solid #ffffff33;
+    font-size: 14px;
+}
+
+.bottom ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.bottom a {
+    color: var(--white);
+}
+
+.bottom a:hover {
+    color: var(--pink);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+
+    .about,
+    .features {
+        flex-direction: column;
+    }
+
+    .about {
+        padding: 45px 6%;
+    }
+
+    .about-text h1 {
+        font-size: 32px;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .site-header ul {
+        gap: 15px;
+    }
+
+    .feature-box {
+        width: 100%;
+    }
+
+    .cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bottom {
+        flex-direction: column;
     }
 }
 
 </style>
 <body>
+   <!-- ===== NAVBAR ===== -->
+<header class="site-header">
+  <b><span>
+    <div class="inner">
 
-    <!-- SALE -->
-    <marquee direction="alternate" scrollamount="10">
-        SALE IS LIVE
-    </marquee>
+        <a class="logo" href="Home.html">
+            <b>Interio<span> Hub</span></b>
+        </a>
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">Interio<span>Hub</span></div>
+        <nav aria-label="Main Navigation">
 
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <ul>
+                <li><a href="./Home.html">Home</a></li>
+                <li><a href="./Product.html">Products</a></li>
+                <li><a href="../Qasim Shafiq/Services Page/services.html">Services</a></li>
+                <li><a href="../Qasim Shafiq/Project Page/OurProject.html">Projects</a></li>
+                <li><a href="./Aboutus.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="Aboutus.html">About</a></li>
-            <li><a href="Product.html">Products</a></li>
-            <li><a href="Reviews.html">Reviews</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-        </ul>
-    </nav>
+        </nav>
+
+    </div>
+</span></b>
+</header>
 
     <!-- VIDEO -->
-    <video width="100%" height="500" muted controls loop id="video">
-        <source src="./Video,Images Folder/WhatsApp Video 2026-10-26 at 1.32.20 PM.mp4"
+    <video width="100%" height="500" autoplay muted loop id="video">
+        <source src="../Samples/WhatsApp Video 2026-10-26 at 1.32.20 PM.mp4"
                 type="video/mp4">
 
     </video>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
+    <!-- HEADING -->
+     <br><br><br><br><br>
+    <div class="main-heading">
+        <h1>BESPOKE MODERN FURNITURE SOLUTIONS</h1>
+        <p>by INTERIOHUB</p>
+    </div>
 
-            <!-- INFORMATION -->
-            <div class="footer-section">
-                <h4>INFORMATION</h4>
-                <ul>
-                    <li><a href="Aboutus.html">About Us</a></li>
-                    <li><a href="https://maps.app.goo.gl/RUyheiEz58x1MQGK8">Store Locator</a></li>
-                    <li><a href="Product.html">Product Catalogue</a></li>
-                    <li><a href="#">Interior Design Services</a></li>
-                    <li><a href="Contact.html">Corporate Orders</a></li>
-                    <li><a href="#">Blogs</a></li>
-                </ul>
+    <!-- SERVICES -->
+    <section class="services">
+
+        <div class="services-container">
+
+            <!-- KITCHENS -->
+            <div class="service-card">
+                <img src="../Rania Farooq/furniture images/kitchen/WhatsApp Image 2026-11-06 at 10.57.40 PM.jpeg" alt="Modern Kitchens">
+                <h2>Kitchens</h2>
             </div>
 
-            <!-- HELP & SUPPORT -->
-            <div class="footer-section">
-                <h4>HELP &amp; SUPPORT</h4>
-                <ul>
-                    <li><a href="#">Installment Plan</a></li>
-                    <li><a href="#">Bank Account Details</a></li>
-                    <li><a href="#">Digital Gift Vouchers</a></li>
-                    <li><a href="#">Delivery Charges</a></li>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
+            <!-- BEDROOM DESIGNS -->
+            <div class="service-card">
+                <img src="../Rania Farooq/furniture images/commercial and display/WhatsApp Image 2026-11-06 at 11.07.07 PM.jpeg" alt="BEDROOM DESIGNS">
+                <h2>BEDROOM DESIGNS</h2>
             </div>
 
-            <!-- SHOPPING ASSISTANCE -->
-            <div class="footer-section contact">
-                <h4>SHOPPING ASSISTANCE</h4>
-
-                <p>Order Support:</p>
-                <p>Call / WhatsApp: 0300-2330613 & 0331-8071799</p>
-                <p>Gmail: <a href="mailto:xpertsintrior@gmail.com">xpertsintrior@gmail.com</a></p>
-                <p>Monday to Saturday: 09:00 AM – 09:00 PM</p>
-
-                <br>
-
-                <p>Complaint Support:</p>
-                <p>Call: 0331-8071799</p>
-               <p>Gmail: <a href="mailto:xpertsintrior@gmail.com">xpertsintrior@gmail.com</a></p>
-               <p>Monday to Saturday: 09:00 AM – 09:00 PM</p>
-                <br>
-
-                <p><a href="#">Complaint Form</a></p>
-
-                <br>
-
-                <p>OUR CATALOGUES</p>
-                <p><a href="#">Xperts Interio Works Catalogue</a></p>
-                <p><a href="#">Kitchen Catalogue</a></p>
+            <!-- OFFICES -->
+            <div class="service-card">
+                <img src="../Rania Farooq/furniture images/office/WhatsApp Image 2026-11-06 at 10.58.28 PM (1).jpeg" alt="OFFICES">
+                <h2>OFFICES Furniture</h2>
             </div>
 
-            <!-- NEWSLETTER -->
-            <div class="footer-section newsletter">
-                <h4>NEWSLETTER</h4>
-
-                <p>SIGN UP TO OUR NEWSLETTER TO RECEIVE EXCLUSIVE OFFERS.</p>
-
-                <form class="subscribe" onsubmit="return false;">
-                    <input type="email"
-                           placeholder="Enter your email"
-                           required>
-                    <button type="submit">SUBSCRIBE</button>
-                </form>
-
-                <div class="socials">
-                    <h4>OUR SOCIALS</h4>
-
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/xpertsinteriorr" class="facebook"
-                           aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-
-                        <a href="https://www.instagram.com/xpertsinteriors/" class="instagram"
-                           aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-
-
-                        <a href="#0331-8071799" class="whatsapp"
-                           aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-
-                           <a href="https://www.linkedin.com/company/interiorxpert-pk/?originalSubdomain=pk" class="linkedin"  
-                            aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
-
-                    </div>
-                </div>
+            <!-- Restraurant -->
+            <div class="service-card">
+                <img src="../Rania Farooq/furniture images/cafe and restraurant/WhatsApp Image 2026-11-06 at 11.05.42 PM.jpeg" alt="Restraurant">
+                <h2>Restraurant Furniture</h2>
             </div>
 
         </div>
-    </footer>
+
+    </section>
+    
+
+<!-- HEADER -->
+<div class="header">
+    <h2>INTERIOHUB </h2>
+
+    <p>
+        Modern furniture - Bespoke design and manufacturing - Quality assurance
+    </p>
+
+    <a href="./contact.html">Get in touch</a>
+</div>
+
+
+<section class="contact-section">
+
+    <!-- LEFT SIDE: CONTACT DETAILS -->
+    <div class="contact-info">
+
+        <h1>Contact us!</h1>
+
+        <h3>INTERIO HUB - Modern Furniture</h3>
+
+        <p>
+            Karachi, Pakistan
+        </p>
+
+        <p>
+            Tel: +92 300 1234567<br>
+            Email: info@interiohub.com
+        </p>
+
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE: GOOGLE MAP -->
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps?q=Gulberg%20III%20karachi%20Pakistan&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+
+</section>
+
+</body>
+</html>
+
+
+
+    <!-- ===== FOOTER ===== -->
+<hr class="edge">
+
+<footer class="site-footer">
+
+    <div class="wrap">
+
+        <div class="cta">
+
+            <h2>
+                Let's design a room you'll love
+                <em>coming home to.</em>
+            </h2>
+
+            <a class="btn" href="contact.html">
+                Book a Visit <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="cols">
+
+            <!-- COMPANY INFO -->
+            <div>
+
+                <a class="logo" href="Home.html">
+                    Interio Hub
+                </a>
+
+                <p style="margin-top:12px;">
+                    Interior design for homes, offices and shops.
+                    We plan, style and build spaces that feel like you.
+                </p>
+
+            </div>
+
+            <!-- EXPLORE -->
+            <nav>
+
+                <h3>Explore</h3>
+
+                <ul>
+                    <li><a href="../Qasim Shafiq/Project Page/OurProject.html">Projects</a></li>
+                    <li><a href="../Qasim Shafiq/Services Page/services.html">Services</a></li>
+                    <li><a href="./Product.html">Products</a></li>
+                    <li><a href="./Aboutus.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+
+            <!-- CONTACT INFO -->
+            <div>
+
+                <h3>Visit or Call</h3>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Karachi, Pakistan
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:hello@interiohub.com">
+                            hello@interiohub.com
+                        </a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+920000000000">
+                            +92 000 0000000
+                        </a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        Mon to Sat, 10am to 7pm
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div class="news">
+
+                <h3>Ideas in Your Inbox</h3>
+
+                <p>
+                    One short email a month with fresh room ideas.
+                </p>
+
+                <form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+
+                    <input type="email"
+                    placeholder="Your email"
+                    aria-label="Email address"
+                    required>
+
+                    <button type="submit">Join</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="bottom">
+
+            <span>
+                © 2026 Interio Hub. All rights reserved.
+            </span>
+
+            <ul>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook"></i>
+                        Facebook
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</footer>
 
     
     

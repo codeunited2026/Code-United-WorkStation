@@ -1,0 +1,834 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - Interio Hub</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== COLOR THEME ===== */
+:root {
+    --brown: #4B3528;
+    --pink: #F4D9D6;
+    --cream: #F8F5F0;
+    --light-brown: #98765B;
+    --rose: #FF8FA3;
+    --white: #FFFFFF;
+    --text: #333333;
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ===== NAVBAR ===== */
+    .site-header {
+      background: #f4d9d6;
+      color: #3a1c2a;
+      padding: 36px 24px
+    }
+
+    .site-header .inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px
+    }
+
+    .site-header .logo {
+      font: 400 38px Fraunces, serif;
+      letter-spacing: .04em;
+      color: inherit;
+      text-decoration: none
+    }
+
+    .site-header ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 30px
+    }
+
+    .site-header li a {
+      position: relative;
+      display: block;
+      padding-bottom: 9px;
+      color: inherit;
+      text-decoration: none
+    }
+
+    .site-header li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 8px;
+      width: 0;
+      transition: width .45s;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8'%3E%3Cpath d='M0 4Q6 0 12 4T24 4' fill='none' stroke='%233a1c2a' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x
+    }
+
+    .site-header li a:hover::after,
+    .site-header li a:focus-visible::after {
+      width: 100%
+    }
+
+    .site-header a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px
+    }
+/* ===== BANNER ===== */
+.banner {
+    text-align: center;
+    padding: 65px 20px;
+    background: var(--cream);
+}
+
+.banner h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    color: var(--brown);
+    margin-bottom: 12px;
+}
+
+.banner p {
+    color: var(--light-brown);
+    font-size: 17px;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main {
+    display: flex;
+    gap: 35px;
+    padding: 40px 7% 65px;
+    align-items: stretch;
+}
+
+/* ===== FORM AREA ===== */
+.form-area {
+    width: 65%;
+    background: var(--white);
+    color: var(--text);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px #4B352815;
+}
+
+.form-area h2 {
+    font-family: 'Fraunces', serif;
+    color: var(--brown);
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+.form-area > p {
+    color: #777;
+    margin-bottom: 22px;
+}
+
+.row {
+    display: flex;
+    gap: 18px;
+}
+
+.field {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin: 13px 0 7px;
+    font-weight: 600;
+    color: var(--brown);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--pink);
+    border-radius: 6px;
+    background: var(--cream);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--light-brown);
+    border-color: var(--light-brown);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: var(--brown);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--light-brown);
+}
+
+/* ===== CONTACT DETAILS ===== */
+.details {
+    width: 35%;
+    padding: 35px 25px;
+    background: var(--brown);
+    border-radius: 12px;
+    color: var(--white);
+}
+
+.details h2 {
+    font-family: 'Fraunces', serif;
+    color: var(--pink);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.details > p {
+    color: #F4E9E3;
+    line-height: 1.7;
+}
+
+.detail-box {
+    padding: 22px 0;
+    border-bottom: 1px solid #ffffff33;
+}
+
+.detail-box:last-child {
+    border-bottom: none;
+}
+
+.detail-box h3 {
+    color: var(--pink);
+    margin-bottom: 9px;
+    font-size: 18px;
+}
+
+.detail-box h3 i {
+    margin-right: 9px;
+    color: var(--rose);
+}
+
+.detail-box p {
+    color: var(--white);
+    font-size: 14px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--brown);
+    color: var(--pink);
+    text-align: center;
+    padding: 22px;
+    border-top: 3px solid var(--pink);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media(max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .main {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .form-area,
+    .details {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .banner h2 {
+        font-size: 32px;
+    }
+}
+/* ===== FOOTER ===== */
+.edge {
+    border: 0;
+    height: 3px;
+    background: var(--pink);
+}
+
+.site-footer {
+    background: var(--brown);
+    color: var(--white);
+    padding: 55px 24px 25px;
+}
+
+.site-footer .wrap {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 40px;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ffffff33;
+}
+
+.cta h2 {
+    max-width: 620px;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.2;
+    color: var(--white);
+}
+
+.cta h2 em {
+    color: var(--pink);
+}
+
+.site-footer .btn {
+    background: var(--pink);
+    color: var(--brown);
+    border-radius: 30px;
+}
+
+.site-footer .btn:hover {
+    background: var(--rose);
+}
+
+.cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 36px;
+    padding: 45px 0;
+}
+
+.cols h3 {
+    color: var(--pink);
+    margin-bottom: 14px;
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+}
+
+.cols p {
+    max-width: 300px;
+    opacity: 0.9;
+}
+
+.cols ul {
+    list-style: none;
+}
+
+.cols li {
+    margin-bottom: 10px;
+}
+
+.cols a {
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.cols a:hover {
+    color: var(--pink);
+}
+
+/* ===== NEWSLETTER ===== */
+.news form {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.news input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 16px;
+    border-radius: 25px;
+    border: 1px solid var(--pink);
+    background: transparent;
+    color: var(--white);
+    outline: none;
+}
+
+.news input::placeholder {
+    color: #ffffffaa;
+}
+
+.news button {
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 25px;
+    background: var(--pink);
+    color: var(--brown);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.news button:hover {
+    background: var(--rose);
+}
+
+/* ===== BOTTOM FOOTER ===== */
+.bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    justify-content: space-between;
+    padding-top: 22px;
+    border-top: 1px solid #ffffff33;
+    font-size: 14px;
+}
+
+.bottom ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.bottom a {
+    color: var(--white);
+}
+
+.bottom a:hover {
+    color: var(--pink);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+
+    .about,
+    .features {
+        flex-direction: column;
+    }
+
+    .about {
+        padding: 45px 6%;
+    }
+
+    .about-text h1 {
+        font-size: 32px;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .site-header ul {
+        gap: 15px;
+    }
+
+    .feature-box {
+        width: 100%;
+    }
+
+    .cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bottom {
+        flex-direction: column;
+    }
+} 
+
+</style>
+</head>
+
+<body>
+
+ <!-- ===== NAVBAR ===== -->
+<header class="site-header">
+  <b><span>
+    <div class="inner">
+
+        <a class="logo" href="Home.html">
+            <b>Interio<span> Hub</span></b>
+        </a>
+
+        <nav aria-label="Main Navigation">
+
+            <ul>
+                <li><a href="./Home.html">Home</a></li>
+                <li><a href="./Product.html">Products</a></li>
+                <li><a href="../Qasim Shafiq/Services Page/services.html">Services</a></li>
+                <li><a href="../Qasim Shafiq/Project Page/OurProject.html">Projects</a></li>
+                <li><a href="./Aboutus.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </div>
+</span></b>
+</header>
+<!-- ===== BANNER ===== -->
+<section class="banner">
+
+    <h2>Contact Us</h2>
+
+    <p>
+        Let's discuss your ideas and create beautiful spaces together.
+    </p>
+
+</section>
+
+<!-- ===== MAIN SECTION ===== -->
+<section class="main">
+
+    <!-- CONTACT FORM -->
+    <div class="form-area">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+            Have a question or planning a new interior project?
+            Fill out the form below and contact our team.
+        </p>
+
+        <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been submitted.');">
+
+            <div class="row">
+
+                <div class="field">
+
+                    <label>Full Name</label>
+
+                    <input type="text"
+                    placeholder="Enter your full name"
+                    required>
+
+                </div>
+
+                <div class="field">
+
+                    <label>Email Address</label>
+
+                    <input type="email"
+                    placeholder="Enter your email"
+                    required>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="field">
+
+                    <label>Phone Number</label>
+
+                    <input type="tel"
+                    placeholder="Enter your phone number"
+                    required>
+
+                </div>
+
+                <div class="field">
+
+                    <label>Service Required</label>
+
+                    <select required>
+
+                        <option value="">Select a Service</option>
+                        <option>Home Interior Design</option>
+                        <option>Office Interior Design</option>
+                        <option>Furniture Design</option>
+                        <option>Kitchen Design</option>
+                        <option>Bedroom Design</option>
+                        <option>Commercial Interior</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <label>Subject</label>
+
+            <input type="text"
+            placeholder="Enter subject"
+            required>
+
+            <label>Your Message</label>
+
+            <textarea
+            placeholder="Write your message here..."
+            required></textarea>
+
+            <button type="submit">
+                SEND MESSAGE
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- CONTACT INFORMATION -->
+    <div class="details">
+
+        <h2>Contact Information</h2>
+
+        <p>
+            We would love to hear from you.
+            Contact us for furniture, interior design,
+            and customized solutions.
+        </p>
+
+        <div class="detail-box">
+
+            <h3>
+                <i class="fa-solid fa-location-dot"></i>
+                Our Location
+            </h3>
+
+            <p>Karachi, Pakistan</p>
+<!-- Google Map -->
+                <section class="map-box">
+                    <iframe
+                        src="https://www.google.com/maps?q=Gulberg%20III%20karachi%20Pakistan&output=embed8"
+                        title="Fine Xperts Interior Karachi Location"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </section>
+        </div>
+
+        <div class="detail-box">
+
+            <h3>
+                <i class="fa-solid fa-envelope"></i>
+                Email Address
+            </h3>
+
+            <p>hello@interiohub.com</p>
+
+        </div>
+
+        <div class="detail-box">
+
+            <h3>
+                <i class="fa-solid fa-phone"></i>
+                Phone Number
+            </h3>
+
+            <p>+92 000 0000000</p>
+
+        </div>
+
+        <div class="detail-box">
+
+            <h3>
+                <i class="fa-solid fa-clock"></i>
+                Working Hours
+            </h3>
+
+            <p>Monday - Saturday</p>
+            <p>10:00 AM - 7:00 PM</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+ <!-- ===== FOOTER ===== -->
+<hr class="edge">
+
+<footer class="site-footer">
+
+    <div class="wrap">
+
+        <div class="cta">
+
+            <h2>
+                Let's design a room you'll love
+                <em>coming home to.</em>
+            </h2>
+
+            <a class="btn" href="contact.html">
+                Book a Visit <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="cols">
+
+            <!-- COMPANY INFO -->
+            <div>
+
+                <a class="logo" href="Home.html">
+                    Interio Hub
+                </a>
+
+                <p style="margin-top:12px;">
+                    Interior design for homes, offices and shops.
+                    We plan, style and build spaces that feel like you.
+                </p>
+
+            </div>
+
+            <!-- EXPLORE -->
+            <nav>
+
+                <h3>Explore</h3>
+
+                <ul>
+                    <li><a href="../Qasim Shafiq/Project Page/OurProject.html">Projects</a></li>
+                    <li><a href="../Qasim Shafiq/Services Page/services.html">Service</a></li>
+                    <li><a href="./Product.html">Products</a></li>
+                    <li><a href="./Aboutus.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+
+            <!-- CONTACT INFO -->
+            <div>
+
+                <h3>Visit or Call</h3>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Karachi, Pakistan
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:hello@interiohub.com">
+                            hello@interiohub.com
+                        </a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+920000000000">
+                            +92 000 0000000
+                        </a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        Mon to Sat, 10am to 7pm
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div class="news">
+
+                <h3>Ideas in Your Inbox</h3>
+
+                <p>
+                    One short email a month with fresh room ideas.
+                </p>
+
+                <form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+
+                    <input type="email"
+                    placeholder="Your email"
+                    aria-label="Email address"
+                    required>
+
+                    <button type="submit">Join</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="bottom">
+
+            <span>
+                © 2026 Interio Hub. All rights reserved.
+            </span>
+
+            <ul>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook"></i>
+                        Facebook
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

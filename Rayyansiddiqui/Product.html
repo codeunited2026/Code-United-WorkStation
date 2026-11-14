@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Interio Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        :root {
+            --brown: #4B3528;
+            --pink: #F4D9D6;
+            --cream: #F8F5F0;
+            --light-brown: #98765B;
+            --rose: #FF8FA3;
+            --white: #FFFFFF;
+            --text: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; }
+
+        /* NAVBAR */
+        .site-header {
+            background: var(--pink);
+            color: #3a1c2a;
+            padding: 25px 24px;
+        }
+
+        .site-header .inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .site-header .logo {
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: .04em;
+            color: inherit;
+        }
+
+        .site-header .logo span { color: var(--light-brown); }
+
+        .site-header ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 30px;
+        }
+
+        .site-header li a {
+            position: relative;
+            display: block;
+            padding-bottom: 8px;
+            color: inherit;
+            font-weight: 600;
+        }
+
+        .site-header li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background: var(--brown);
+            transition: width .3s ease;
+        }
+
+        .site-header li a:hover::after,
+        .site-header li a:focus-visible::after { width: 100%; }
+
+        /* PAGE HEADING */
+        .page-heading { text-align: center; padding: 38px 20px 25px; }
+        .page-heading h1 { color: var(--brown); font-size: 34px; margin-bottom: 8px; }
+        .page-heading h1 span { color: var(--light-brown); }
+        .page-heading p { color: #666; }
+
+        /* PRODUCT GRID */
+        .collection {
+            max-width: 1400px;
+            margin: 0 auto 55px;
+            padding: 0 4%;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .product {
+            min-width: 0;
+            background: var(--white);
+            border: 1px solid #eadbd4;
+            border-radius: 12px;
+            padding: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(75, 53, 40, .10);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(75, 53, 40, .16);
+        }
+
+        .product img {
+            display: block;
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            background: #eee;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--brown);
+            margin: 12px 2px 6px;
+        }
+
+        .product p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #666;
+            margin: 0 2px 5px;
+        }
+
+        /* FOOTER */
+        .edge { border: 0; height: 3px; background: var(--pink); }
+        .site-footer { background: var(--brown); color: var(--white); padding: 45px 24px 25px; }
+        .site-footer .wrap { max-width: 1100px; margin: auto; }
+        .cta { display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center; justify-content: space-between; padding-bottom: 35px; border-bottom: 1px solid #ffffff33; }
+        .cta h2 { max-width: 620px; font-size: clamp(27px, 4vw, 42px); line-height: 1.2; color: var(--white); text-align: left; margin: 0; }
+        .cta h2 em { color: var(--pink); }
+        .site-footer .btn { display: inline-block; background: var(--pink); color: var(--brown); border-radius: 30px; padding: 12px 22px; font-weight: bold; }
+        .site-footer .btn:hover { background: var(--rose); }
+        .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 36px; padding: 40px 0; }
+        .cols h3 { color: var(--pink); margin-bottom: 14px; font-size: 20px; }
+        .cols p { max-width: 300px; opacity: .9; }
+        .cols ul { list-style: none; }
+        .cols li { margin-bottom: 10px; }
+        .cols a, .bottom a { color: var(--white); transition: color .2s; }
+        .cols a:hover, .bottom a:hover { color: var(--pink); }
+        .news form { display: flex; gap: 8px; margin-top: 14px; }
+        .news input { flex: 1; min-width: 0; padding: 12px 14px; border-radius: 25px; border: 1px solid var(--pink); background: transparent; color: var(--white); outline: none; }
+        .news input::placeholder { color: #ffffffaa; }
+        .news button { padding: 12px 18px; border: 0; border-radius: 25px; background: var(--pink); color: var(--brown); cursor: pointer; font-weight: bold; }
+        .news button:hover { background: var(--rose); }
+        .bottom { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; padding-top: 22px; border-top: 1px solid #ffffff33; font-size: 14px; }
+        .bottom ul { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; }
+
+        /* RESPONSIVE */
+        
+        @media (max-width: 900px) { .collection { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 700px) {
+            .collection { gap: 16px; padding: 0 3%; }
+            .product img { height: 165px; }
+            .site-header { padding: 20px 14px; }
+            .site-header ul { gap: 10px 18px; }
+            .page-heading h1 { font-size: 28px; }
+        }
+        @media (max-width: 450px) {
+            .collection { grid-template-columns: 1fr; padding: 0 7%; }
+            .product img { height: 220px; }
+            .bottom { flex-direction: column; }
+            .cta { align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <div class="inner">
+            <a class="logo" href="Home.html">Interio<span> Hub</span></a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="../Qasim Shafiq/Services Page/services.html">Services</a></li>
+                    <li><a href="../Qasim Shafiq/Project Page/OurProject.html">Projects</a></li>
+                    <li><a href="Aboutus.html">About Us</a></li>
+                    <li><a href="..//Rania Farooq/contact3.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-heading">
+            <h1>Our <span>Products</span></h1>
+            <p>Explore our furniture and interior design collection.</p>
+        </section>
+
+        <section class="collection" aria-label="Product collection">
+            <div class="product"> <img src="../Rania Farooq/furniture images/cafe and restraurant/WhatsApp Image 2026-11-06 at 11.05.42 PM (1).jpeg" alt="Modern TV Console"> <h3>Modern TV Console</h3> <p>A sleek entertainment unit with a clean finish, designed to keep your living room neat and stylish.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/cafe and restraurant/WhatsApp Image 2026-11-06 at 11.05.42 PM (2).jpeg" alt="Wooden Dressing Table"> <h3>Wooden Dressing Table</h3> <p>A graceful dressing table design that adds warmth and practical storage to a bedroom.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/cafe and restraurant/WhatsApp Image 2026-11-06 at 11.05.42 PM (3).jpeg" alt="Contemporary Cafe Interior"> <h3>Contemporary Cafe Interior</h3> <p>A welcoming café concept featuring modern finishes and a comfortable atmosphere for guests.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/cafe and restraurant/WhatsApp Image 2026-11-06 at 11.05.42 PM.jpeg" alt="Executive Office Desk"> <h3>Executive Office Desk</h3> <p>A professional workspace desk concept with a refined look for everyday office tasks.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/commercial and display/WhatsApp Image 2026-11-06 at 11.07.07 PM.jpeg" alt="Luxury Bedroom Design"> <h3>Luxury Bedroom Design</h3> <p>A relaxing bedroom setup with elegant details and a warm, comfortable feel.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/commercial and display/WhatsApp Image 2026-11-06 at 11.07.08 PM (1).jpeg" alt="Decorative Art Vases"> <h3>Decorative Art Vases</h3> <p>Decorative vases that bring texture, colour and character to shelves or tabletops.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/commercial and display/WhatsApp Image 2026-11-06 at 11.07.08 PM (2).jpeg" alt="Designer Wall Mirror"> <h3>Designer Wall Mirror</h3> <p>A stylish wall mirror that adds visual depth and a decorative touch to your interior.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/commercial and display/WhatsApp Image 2026-11-06 at 11.07.08 PM.jpeg" alt="Carved Wooden Decor"> <h3>Carved Wooden Decor</h3> <p>A decorative wooden accent with traditional character, ideal for enhancing a room.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/custom/WhatsApp Image 2026-11-06 at 11.18.57 PM (1).jpeg" alt="Bespoke Furniture Design"> <h3>Bespoke Furniture Design</h3> <p>A custom furniture concept planned to suit your space, style and everyday needs.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/custom/WhatsApp Image 2026-11-06 at 11.18.57 PM.jpeg" alt="Personalised Interior Piece"> <h3>Personalised Interior Piece</h3> <p>A made-to-order interior piece designed to complement your preferred décor.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/custom/WhatsApp Image 2026-11-06 at 11.18.58 PM (1).jpeg" alt="Custom Home Accent"> <h3>Custom Home Accent</h3> <p>A unique décor element created to give your home a personal finishing touch.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/custom/WhatsApp Image 2026-11-06 at 11.18.58 PM (2).jpeg" alt="Tailored Furniture Solution"> <h3>Tailored Furniture Solution</h3> <p>A customised furniture option designed around your room layout and requirements.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/home/WhatsApp Image 2026-11-06 at 11.00.02 PM (1).jpeg" alt="Warm Living Room Style"> <h3>Warm Living Room Style</h3> <p>A welcoming home design idea that combines comfort with a coordinated interior look.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/home/WhatsApp Image 2026-11-06 at 11.00.02 PM (2).jpeg" alt="Modern Home Arrangement"> <h3>Modern Home Arrangement</h3> <p>A balanced interior arrangement designed to make everyday living more comfortable.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/home/WhatsApp Image 2026-11-06 at 11.00.02 PM.jpeg" alt="Elegant Home Decor"> <h3>Elegant Home Decor</h3> <p>A refined décor idea that adds charm and a polished look to your living space.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/home/WhatsApp Image 2026-11-06 at 11.00.03 PM (2).jpeg" alt="Contemporary Home Setting"> <h3>Contemporary Home Setting</h3> <p>A modern home interior concept with a simple, practical and inviting style.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/kitchen/WhatsApp Image 2026-11-06 at 10.57.40 PM.jpeg" alt="Modern Kitchen Design"> <h3>Modern Kitchen Design</h3> <p>A functional kitchen concept planned for convenient use and a clean, modern appearance.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/kitchen/WhatsApp Image 2026-11-06 at 10.57.41 PM (1).jpeg" alt="Smart Kitchen Storage"> <h3>Smart Kitchen Storage</h3> <p>A practical kitchen design idea that helps organise essentials and use space efficiently.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/kitchen/WhatsApp Image 2026-11-06 at 10.57.41 PM (2).jpeg" alt="Elegant Kitchen Interior"> <h3>Elegant Kitchen Interior</h3> <p>A stylish kitchen setting that brings together useful layout choices and elegant finishes.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/kitchen/WhatsApp Image 2026-11-06 at 10.57.41 PM (3).jpeg" alt="Functional Kitchen Space"> <h3>Functional Kitchen Space</h3> <p>A well-planned kitchen concept designed to support daily cooking and easy movement.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/office/WhatsApp Image 2026-11-06 at 10.58.27 PM (1).jpeg" alt="Contemporary Office Setup"> <h3>Contemporary Office Setup</h3> <p>A modern office furniture concept that supports a neat and productive workspace.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/office/WhatsApp Image 2026-11-06 at 10.58.27 PM.jpeg" alt="Professional Workstation"> <h3>Professional Workstation</h3> <p>A practical workstation design created for comfort, focus and everyday work.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/office/WhatsApp Image 2026-11-06 at 10.58.28 PM (1).jpeg" alt="Office Storage Solution"> <h3>Office Storage Solution</h3> <p>A useful office furniture idea that helps keep documents and work essentials organised.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/office/WhatsApp Image 2026-11-06 at 10.58.28 PM (2).jpeg" alt="Modern Office Interior"> <h3>Modern Office Interior</h3> <p>A coordinated office design concept with a professional and welcoming atmosphere.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/school/WhatsApp Image 2026-11-06 at 11.14.45 PM.jpeg" alt="Classroom Furniture Setup"> <h3>Classroom Furniture Setup</h3> <p>A practical furniture arrangement designed to support a comfortable learning environment.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/school/WhatsApp Image 2026-11-06 at 11.14.46 PM (1).jpeg" alt="Student Desk Design"> <h3>Student Desk Design</h3> <p>A functional desk concept that provides students with a convenient study space.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/school/WhatsApp Image 2026-11-06 at 11.14.46 PM (2).jpeg" alt="Learning Space Furniture"> <h3>Learning Space Furniture</h3> <p>A simple and durable furniture concept for an organised classroom environment.</p> </div>
+
+<div class="product"> <img src="../Rania Farooq/furniture images/school/WhatsApp Image 2026-11-06 at 11.14.46 PM.jpeg" alt="School Seating Arrangement"> <h3>School Seating Arrangement</h3> <p>A classroom seating idea designed to make learning spaces comfortable and orderly.</p> </div>
+        </section>
+    </main>
+
+    <hr class="edge">
+
+<footer class="site-footer">
+
+    <div class="wrap">
+
+        <div class="cta">
+
+            <h2>
+                Let's design a room you'll love
+                <em>coming home to.</em>
+            </h2>
+
+            <a class="btn" href="contact.html">
+                Book a Visit <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="cols">
+
+            <!-- COMPANY INFO -->
+            <div>
+
+                <a class="logo" href="Home.html">
+                    Interio Hub
+                </a>
+
+                <p style="margin-top:12px;">
+                    Interior design for homes, offices and shops.
+                    We plan, style and build spaces that feel like you.
+                </p>
+
+            </div>
+
+            <!-- EXPLORE -->
+            <nav>
+
+                <h3>Explore</h3>
+
+                <ul>
+                    <li><a href="./Home.html"></a></li>
+                    <li><a href="../Qasim Shafiq/Project Page/OurProject.html">Projects</a></li>
+                    <li><a href="../Qasim Shafiq/Services Page/services.html">Services</a></li>
+                    <li><a href="./Aboutus.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+
+            <!-- CONTACT INFO -->
+            <div>
+
+                <h3>Visit or Call</h3>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Karachi, Pakistan
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:hello@interiohub.com">
+                            hello@interiohub.com
+                        </a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+920000000000">
+                            +92 000 0000000
+                        </a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        Mon to Sat, 10am to 7pm
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div class="news">
+
+                <h3>Ideas in Your Inbox</h3>
+
+                <p>
+                    One short email a month with fresh room ideas.
+                </p>
+
+                <form class="newsletter-form">
+
+                    <input type="email"
+                    placeholder="Your email"
+                    aria-label="Email address"
+                    required>
+
+                    <button type="submit">Join</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="bottom">
+
+            <span>
+                © 2026 Interio Hub. All rights reserved.
+            </span>
+
+            <ul>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook"></i>
+                        Facebook
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</footer>
+
+    <script>
+        function subscribe(event) {
+            event.preventDefault();
+            alert('Thank you for subscribing!');
+        }
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) newsletterForm.addEventListener('submit', subscribe);
+    </script>
+</body>
+</html>

@@ -23,8 +23,8 @@ body {
 }
 /* ===== NAVBAR ===== */
     .site-header {
-      background: #f4d9d6;
-      color: #3a1c2a;
+     background: #4e3c3a;
+      color: #dddddd;
       padding: 36px 24px
     }
 
@@ -569,7 +569,7 @@ a {
 }
 
 .site-footer .wrap {
-    max-width: 1100px;
+    max-width: 100%;
     margin: auto;
 }
 
